@@ -1,3 +1,3 @@
-module Vdx
+class Vdx
   VERSION = "0.1.0"
 end

@@ -1,8 +1,9 @@
 require "vdx/version"
 
-module Vdx
-  class << self
-    def highest_one_bits(int)
+class Vdx
+  class ::Integer
+    def highest_one_bits
+      int = self
       Enumerator.new do |e|
         loop do
           b_len = int.bit_length
@@ -12,5 +13,17 @@ module Vdx
         end
       end
     end
+  end
+
+  def initialize
+    @hash = Hash.new{ |h, k| h[k] = 0 }
+  end
+
+  def []=(key, id)
+    @hash[key] |= (1 << (id - 1))
+  end
+
+  def [](key)
+    @hash[key]
   end
 end
