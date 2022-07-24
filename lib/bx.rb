@@ -1,6 +1,6 @@
-require "vdx/version"
+require "bx/version"
 
-class Vdx
+class Bx
   class ::Integer
     def highest_one_bits
       int = self

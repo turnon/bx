@@ -1,13 +1,13 @@
-require_relative 'lib/vdx/version'
+require_relative 'lib/bx/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "vdx"
-  spec.version       = Vdx::VERSION
+  spec.name          = "bx"
+  spec.version       = Bx::VERSION
   spec.authors       = ["ken"]
   spec.email         = ["block24block@gmail.com"]
 
-  spec.summary       = %q{Inverted Index}
-  spec.homepage      = "https://github.com/turnon/vdx"
+  spec.summary       = %q{Bitmap Index}
+  spec.homepage      = "https://github.com/turnon/bx"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
