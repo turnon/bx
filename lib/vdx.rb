@@ -14,6 +14,19 @@ class Vdx
         end
       end
     end
+
+    def lowest_one_bits
+      int = self
+      Enumerator.new do |e|
+        loop do
+          lowest = int & -int
+          break if lowest == 0
+          pos = lowest.bit_length - 1
+          e << pos
+          int = int ^ (1 << pos)
+        end
+      end
+    end
   end
 
   def initialize
