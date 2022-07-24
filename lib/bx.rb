@@ -18,12 +18,14 @@ class Bx
     def lowest_one_bits
       int = self
       Enumerator.new do |e|
+        off = 0
         loop do
           lowest = int & -int
           break if lowest == 0
-          pos = lowest.bit_length - 1
-          e << pos
-          int = int ^ (1 << pos)
+          b_len = lowest.bit_length
+          off += b_len
+          e << off - 1
+          int = int >> b_len
         end
       end
     end
