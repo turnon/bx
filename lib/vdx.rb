@@ -8,8 +8,9 @@ class Vdx
         loop do
           b_len = int.bit_length
           break if b_len == 0
-          e << b_len
-          int = int ^ (1 << (b_len - 1))
+          pos = b_len - 1
+          e << pos
+          int = int ^ (1 << pos)
         end
       end
     end
