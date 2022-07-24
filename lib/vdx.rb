@@ -34,7 +34,7 @@ class Vdx
   end
 
   def []=(key, id)
-    @hash[key] |= (1 << (id - 1))
+    @hash[key] |= (1 << id)
   end
 
   def [](key)
