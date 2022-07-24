@@ -1,8 +1,6 @@
 # Bx
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bx`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Bitmap index !
 
 ## Installation
 
@@ -22,7 +20,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# prepare
+bx = Bx.new
+
+# set bits
+bx['drama'] = 91
+# ...
+bx['movie'] = 187
+# ...
+bx['action'] = 437
+# ...
+bx['comedy'] = 437
+
+# bitwise
+ids = bx['drama'] & (bx['action'] | bx['comedy'])
+
+# enumerate from high to low
+ids.highest_one_bits.each{ ... }
+
+# enumerate from low to high
+ids.lowest_one_bits.each{ ... }
+```
 
 ## Development
 
