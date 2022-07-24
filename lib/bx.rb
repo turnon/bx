@@ -2,7 +2,7 @@ require "bx/version"
 
 class Bx
   class ::Integer
-    def highest_one_bits
+    def hi_bits
       int = self
       Enumerator.new do |e|
         loop do
@@ -15,7 +15,7 @@ class Bx
       end
     end
 
-    def lowest_one_bits
+    def lo_bits
       int = self
       Enumerator.new do |e|
         off = 0
@@ -41,5 +41,17 @@ class Bx
 
   def [](key)
     @hash[key]
+  end
+
+  def keys
+    @hash.keys
+  end
+
+  def values
+    @hash.values
+  end
+
+  def bits_bytes
+    @hash.each_value.sum(&:size)
   end
 end

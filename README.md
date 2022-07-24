@@ -37,10 +37,10 @@ bx['comedy'] = 437
 ids = bx['drama'] & (bx['action'] | bx['comedy'])
 
 # enumerate from high to low
-ids.highest_one_bits.each{ ... }
+ids.hi_bits.each{ ... }
 
 # enumerate from low to high
-ids.lowest_one_bits.each{ ... }
+ids.lo_bits.each{ ... }
 ```
 
 ## Development
